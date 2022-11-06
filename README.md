@@ -33,7 +33,7 @@ src
 The test results will be recorded in the target/site/serenity directory.
 Open index.html to view results. Each test result can be seen by clicking on the links
 
-## How the code stores data from inputfile and outputfile
+### How the code stores data from inputfile and outputfile while executing
 
 ### Data from search from the site stored in List<HashMap<String,String>> vehiclesDataFromCarTaxCheck within the code as below
 
