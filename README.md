@@ -35,7 +35,7 @@ Open index.html to view results. Each test result can be seen by clicking on the
 
 ### How the code stores data from inputfile and outputfile while executing
 
-#### Data from search from the site stored in List<HashMap<String,String>> vehiclesDataFromCarTaxCheck within the code as below
+#### Data from search from the site stored in List<HashMap<String,String>> vehiclesDataFromCarTaxCheck within the code as shown in sample below
 
 [
 
@@ -46,7 +46,7 @@ Open index.html to view results. Each test result can be seen by clicking on the
 
 ]
 
-#### Data from output file is stored in List<HashMap<String,String>> outputFileData within the code as below
+#### Data from output file is stored in List<HashMap<String,String>> outputFileData within the code as shown in sample below
 [
 
 {colour=white, year=2018, registration=sg18htn, model=golf se navigation tsi evo, make=volkswagen},
