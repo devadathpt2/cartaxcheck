@@ -56,4 +56,4 @@ Open index.html to view results. Each test result can be seen by clicking on the
 
 ]
 
-### The assertion then picks data for each vehicle from output file and compares whether data from searching website matches.
+#### The assertion then picks data for each vehicle from output file and compares whether data from searching website matches.
