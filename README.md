@@ -26,7 +26,7 @@ src
 ```$ mvn clean verify```
 
 ### To run on firefox
-```$ mvn clean verify -Ddriver=firefox```
+```$ mvn clean verify -Dwebdriver.driver=firefox```
 
 
 ### Test reports
