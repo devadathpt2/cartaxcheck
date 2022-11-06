@@ -1,3 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Car check","Read input file for Car registrations, obtain results from cartaxcheck.com","FAILURE","2022-11-06T16:32:57.7033058Z[Europe/London]","0.0","37.86"
-"Car check","Read input file for Car registrations, obtain information from cartaxcheck.com and verify against the output file","FAILURE","2022-11-06T16:33:36.4818655Z[Europe/London]","0.0","87.88"
