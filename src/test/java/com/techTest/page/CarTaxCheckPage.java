@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class CarTaxCheckPage extends PageObject {
 
@@ -50,8 +51,6 @@ public class CarTaxCheckPage extends PageObject {
 
             vehiclesDataFromCarTaxCheck.add(vehicleData);
         }
-
-        System.out.println("********* data from search " + vehiclesDataFromCarTaxCheck);
         return vehiclesDataFromCarTaxCheck;
 
     }
@@ -101,4 +100,39 @@ public class CarTaxCheckPage extends PageObject {
             }
         }
     }
+
+    public void runAssertionForModelMatch(List<HashMap<String, String>> outputFileData,
+                                          List<HashMap<String, String>> vehiclesDataFromCarTaxCheck) {
+
+        for (HashMap<String, String> vehicles : outputFileData) {
+
+            registration = vehicles.get("registration");
+            try {
+                HashMap<String, String> tempMap = new HashMap<>();
+
+
+                tempMap = vehiclesDataFromCarTaxCheck.stream().filter(v -> v.containsValue(registration))
+                        .findFirst().orElseThrow(()->new Exception("No value found"));
+
+                // get the headers(REGISTRATION,MAKE,MODEL)
+                Set<String> keys = vehicles.keySet();
+
+                for (String key : keys) {
+                        if(key.equalsIgnoreCase("model")){
+                            List<String> outputModel = Arrays.stream(vehicles.get(key).split("\\s")).map(String::toLowerCase).collect(Collectors.toList());
+                            List<String> inputModel = Arrays.stream(tempMap.get(key).split("\\s")).map(String::toLowerCase).collect(Collectors.toList());
+                            Assert.assertTrue("Model match couldnt be found for "+ registration.toUpperCase(),outputModel.stream().anyMatch(inputModel::contains));
+                        }
+                        else {
+                            Assert.assertEquals("For registration " + registration.toUpperCase() +
+                                    " from output file " + key + " -- ", (vehicles.get(key)), tempMap.get(key));
+                        }
+                }
+            } catch (Exception e) {
+                Assert.fail(e.getMessage() + " -- The registration " + registration.toUpperCase() +
+                        " found in output file but not found in the inputfile : ");
+            }
+        }
+    }
+
 }

@@ -38,6 +38,7 @@ public class ReadFiles {
                 String[] inputFileLines = line.replaceAll("[^a-zA-Z0-9]", " ").split("\\s");
                 for (String w : inputFileLines
                 ) {
+                    w=w.replace(".","");
                     int i = Arrays.asList(inputFileLines).indexOf(w);
                     Matcher matcher = pattern.matcher(w);
                     Matcher matcher1 = pattern1.matcher(w);
@@ -83,10 +84,11 @@ public class ReadFiles {
         outputFileLines.stream().skip(1).forEach(l -> {
             HashMap<String, String> outputFileSingeVehicleData = new HashMap<>();
             outputFileRows = l.split(",");
-            IntStream.rangeClosed(0,outputFileRows.length-1 )
+
+            IntStream.rangeClosed(0,outPutFileheaders.length-1 )
                     .forEach(
-                            i->outputFileSingeVehicleData.put(outPutFileheaders[i].toLowerCase(),
-                            outputFileRows[i].toLowerCase())
+                            i -> outputFileSingeVehicleData.put(outPutFileheaders[i].toLowerCase(),
+                                    outputFileRows[i].toLowerCase())
                     );
             outputFileAllData.add(outputFileSingeVehicleData);
 

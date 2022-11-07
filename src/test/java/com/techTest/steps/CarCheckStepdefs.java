@@ -43,4 +43,10 @@ public class CarCheckStepdefs {
     public void theVehicleDataFromCartaxcheckIsVerifiedAgainstOutputfile() {
         carTaxCheckPage.runAssertionInputVsOutput(outputFileData, vehiclesDataFromCarTaxCheck);
     }
+
+    @Then("the vehicle data from cartaxcheck is verified for model match")
+    public void theVehicleDataFromCartaxcheckIsVerifiedForModelMatch() {
+        carTaxCheckPage.runAssertionForModelMatch(outputFileData, vehiclesDataFromCarTaxCheck);
+    }
+
 }
