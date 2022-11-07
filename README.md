@@ -1,4 +1,4 @@
-# Project uses Serenity BDD and Serenity reports
+# Project uses Serenity BDD and Serenity reports and has been tested with jdk1.8.0_281
 
 ## Get the code
 
