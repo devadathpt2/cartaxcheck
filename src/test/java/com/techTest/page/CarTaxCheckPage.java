@@ -85,7 +85,7 @@ public class CarTaxCheckPage extends PageObject {
 
 
                  tempMap = vehiclesDataFromCarTaxCheck.stream().filter(v -> v.containsValue(registration))
-                        .findFirst().orElseThrow();
+                        .findFirst().orElseThrow(()->new Exception("No value found"));
 
                 // get the headers(REGISTRATION,MAKE,MODEL,COLOUR,YEAR)
                 Set<String> keys = vehicles.keySet();
