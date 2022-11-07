@@ -1,4 +1,4 @@
-# Project uses Serenity BDD and Serenity reports
+# Project uses Serenity BDD and Serenity reports and has been tested with jdk1.8.0_281
 
 ## Get the code
 
@@ -27,7 +27,11 @@ src
 
 ### To run on firefox
 ```$ mvn clean verify -Dwebdriver.driver=firefox```
+## or
+```$ mvn clean verify -D"webdriver.driver=firefox"```
 
+### Error about cleaning project
+##### if you get  Failed to clean project: " Failed to execute goal org.apache.maven.plugins:maven-clean-plugin:2.5:clean (default-clean) on project techTest: Failed to clean project: Failed to delete"  manually delete the target folder and re-run.
 
 ### Test reports
 The test results will be recorded in the target/site/serenity directory.
