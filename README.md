@@ -30,6 +30,8 @@ src
 ## or
 ```$ mvn clean verify -D"webdriver.driver=firefox"```
 
+### Error about cleaning project
+##### if you get  Failed to clean project: " Failed to execute goal org.apache.maven.plugins:maven-clean-plugin:2.5:clean (default-clean) on project techTest: Failed to clean project: Failed to delete"  manually delete the target folder and re-run.
 
 ### Test reports
 The test results will be recorded in the target/site/serenity directory.
